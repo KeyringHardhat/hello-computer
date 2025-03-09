@@ -43,6 +43,12 @@ if [ ! -d "$USER_HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
         "$USER_HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 fi
 
+if [ ! -d "$USER_HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+    echo "Installing Zsh Syntax Highlighting..."
+    sudo -u $SUDO_USER git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        "$USER_HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+fi
+
 echo "Setting up Passion theme..."
 sudo -u $SUDO_USER wget -O "$USER_HOME/.oh-my-zsh/themes/passion.zsh-theme" \
     https://raw.githubusercontent.com/ChesterYue/ohmyzsh-theme-passion/master/passion.zsh-theme
